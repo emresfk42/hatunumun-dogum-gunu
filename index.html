@@ -2,36 +2,443 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>İyi ki Doğdun Hatunum</title>
-  <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <title>İyi ki Doğdun Hatunum</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #f3e5f5;
+            font-family: 'Segoe UI', sans-serif;
+            text-align: center;
+            overflow-x: hidden;
+        }
+        h1 {
+            background-color: #8e24aa;
+            color: white;
+            padding: 20px;
+            font-size: 2.5em;
+            margin: 0;
+        }
+        #countdown {
+            font-size: 2em;
+            margin: 20px 0;
+            color: #6a1b9a;
+        }
+        #celebration {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+        }
+        .balloon {
+            position: absolute;
+            width: 40px;
+            height: 60px;
+            background: red;
+            border-radius: 50% 50% 50% 50%;
+            animation: float 6s infinite ease-in;
+        }
+        @keyframes float {
+            0% {transform: translateY(100vh); opacity: 1;}
+            100% {transform: translateY(-100vh); opacity: 0;}
+        }
+        #cake-container {
+            margin-top: 40px;
+        }
+        #cake {
+            width: 150px;
+        }
+        #fireworks, #confetti {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            top: 0;
+            left: 0;
+        }
+        button {
+            padding: 10px 20px;
+            background: #8e24aa;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1em;
+            margin-top: 15px;
+        }
+    
+.gallery {
+    margin: 30px auto;
+    max-width: 1200px;
+    padding: 10px;
+}
+.gallery h2 {
+    color: #6a1b9a;
+}
+.photos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+.photo-frame {
+    border: 4px solid #8e24aa;
+    padding: 8px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    width: 200px;
+}
+.photo-frame img {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+}
+.note {
+    font-size: 0.9em;
+    color: #333;
+    margin-top: 5px;
+}
+
+
+#musicControls {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 9999;
+}
+#musicControls button {
+  background-color: #8e24aa;
+  color: white;
+  border: none;
+  padding: 10px;
+  font-size: 18px;
+  margin: 2px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+#musicControls button:hover {
+  background-color: #6a1b9a;
+}
+
+
+body {
+  background: linear-gradient(to bottom, #4a148c, #6a1b9a);
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.stars {
+  width: 2px;
+  height: 2px;
+  background: white;
+  position: absolute;
+  animation: twinkle 2s infinite ease-in-out alternate;
+}
+
+@keyframes twinkle {
+  0% { opacity: 0.3; transform: scale(1); }
+  100% { opacity: 1; transform: scale(1.5); }
+}
+
+</style>
 </head>
 <body>
-  <div class="countdown-container">
-    <h1>İyi ki Doğdun Hatunum ❤️</h1>
-    <p id="countdown"></p>
-  </div>
+<div class="stars" style="top:0%; left:0%; animation-delay:0.0s;"></div>
+<div class="stars" style="top:5%; left:11%; animation-delay:0.3s;"></div>
+<div class="stars" style="top:10%; left:22%; animation-delay:0.6s;"></div>
+<div class="stars" style="top:15%; left:33%; animation-delay:0.8999999999999999s;"></div>
+<div class="stars" style="top:20%; left:44%; animation-delay:1.2s;"></div>
+<div class="stars" style="top:25%; left:55%; animation-delay:0.0s;"></div>
+<div class="stars" style="top:30%; left:66%; animation-delay:0.3s;"></div>
+<div class="stars" style="top:35%; left:77%; animation-delay:0.6s;"></div>
+<div class="stars" style="top:40%; left:88%; animation-delay:0.8999999999999999s;"></div>
+<div class="stars" style="top:45%; left:99%; animation-delay:1.2s;"></div>
+<div class="stars" style="top:50%; left:10%; animation-delay:0.0s;"></div>
+<div class="stars" style="top:55%; left:21%; animation-delay:0.3s;"></div>
+<div class="stars" style="top:60%; left:32%; animation-delay:0.6s;"></div>
+<div class="stars" style="top:65%; left:43%; animation-delay:0.8999999999999999s;"></div>
+<div class="stars" style="top:70%; left:54%; animation-delay:1.2s;"></div>
+<div class="stars" style="top:75%; left:65%; animation-delay:0.0s;"></div>
+<div class="stars" style="top:80%; left:76%; animation-delay:0.3s;"></div>
+<div class="stars" style="top:85%; left:87%; animation-delay:0.6s;"></div>
+<div class="stars" style="top:90%; left:98%; animation-delay:0.8999999999999999s;"></div>
+<div class="stars" style="top:95%; left:9%; animation-delay:1.2s;"></div>
+<div class="stars" style="top:0%; left:20%; animation-delay:0.0s;"></div>
+<div class="stars" style="top:5%; left:31%; animation-delay:0.3s;"></div>
+<div class="stars" style="top:10%; left:42%; animation-delay:0.6s;"></div>
+<div class="stars" style="top:15%; left:53%; animation-delay:0.8999999999999999s;"></div>
+<div class="stars" style="top:20%; left:64%; animation-delay:1.2s;"></div>
+<div class="stars" style="top:25%; left:75%; animation-delay:0.0s;"></div>
+<div class="stars" style="top:30%; left:86%; animation-delay:0.3s;"></div>
+<div class="stars" style="top:35%; left:97%; animation-delay:0.6s;"></div>
+<div class="stars" style="top:40%; left:8%; animation-delay:0.8999999999999999s;"></div>
+<div class="stars" style="top:45%; left:19%; animation-delay:1.2s;"></div>
+<div class="stars" style="top:50%; left:30%; animation-delay:0.0s;"></div>
+<div class="stars" style="top:55%; left:41%; animation-delay:0.3s;"></div>
+<div class="stars" style="top:60%; left:52%; animation-delay:0.6s;"></div>
+<div class="stars" style="top:65%; left:63%; animation-delay:0.8999999999999999s;"></div>
+<div class="stars" style="top:70%; left:74%; animation-delay:1.2s;"></div>
+<div class="stars" style="top:75%; left:85%; animation-delay:0.0s;"></div>
+<div class="stars" style="top:80%; left:96%; animation-delay:0.3s;"></div>
+<div class="stars" style="top:85%; left:7%; animation-delay:0.6s;"></div>
+<div class="stars" style="top:90%; left:18%; animation-delay:0.8999999999999999s;"></div>
+<div class="stars" style="top:95%; left:29%; animation-delay:1.2s;"></div>
+<div class="stars" style="top:0%; left:40%; animation-delay:0.0s;"></div>
+<div class="stars" style="top:5%; left:51%; animation-delay:0.3s;"></div>
+<div class="stars" style="top:10%; left:62%; animation-delay:0.6s;"></div>
+<div class="stars" style="top:15%; left:73%; animation-delay:0.8999999999999999s;"></div>
+<div class="stars" style="top:20%; left:84%; animation-delay:1.2s;"></div>
+<div class="stars" style="top:25%; left:95%; animation-delay:0.0s;"></div>
+<div class="stars" style="top:30%; left:6%; animation-delay:0.3s;"></div>
+<div class="stars" style="top:35%; left:17%; animation-delay:0.6s;"></div>
+<div class="stars" style="top:40%; left:28%; animation-delay:0.8999999999999999s;"></div>
+<div class="stars" style="top:45%; left:39%; animation-delay:1.2s;"></div>
+<div class="stars" style="top:50%; left:50%; animation-delay:0.0s;"></div>
+<div class="stars" style="top:55%; left:61%; animation-delay:0.3s;"></div>
+<div class="stars" style="top:60%; left:72%; animation-delay:0.6s;"></div>
+<div class="stars" style="top:65%; left:83%; animation-delay:0.8999999999999999s;"></div>
+<div class="stars" style="top:70%; left:94%; animation-delay:1.2s;"></div>
+<div class="stars" style="top:75%; left:5%; animation-delay:0.0s;"></div>
+<div class="stars" style="top:80%; left:16%; animation-delay:0.3s;"></div>
+<div class="stars" style="top:85%; left:27%; animation-delay:0.6s;"></div>
+<div class="stars" style="top:90%; left:38%; animation-delay:0.8999999999999999s;"></div>
+<div class="stars" style="top:95%; left:49%; animation-delay:1.2s;"></div>
+<div class="stars" style="top:0%; left:60%; animation-delay:0.0s;"></div>
+<div class="stars" style="top:5%; left:71%; animation-delay:0.3s;"></div>
+<div class="stars" style="top:10%; left:82%; animation-delay:0.6s;"></div>
+<div class="stars" style="top:15%; left:93%; animation-delay:0.8999999999999999s;"></div>
+<div class="stars" style="top:20%; left:4%; animation-delay:1.2s;"></div>
+<div class="stars" style="top:25%; left:15%; animation-delay:0.0s;"></div>
+<div class="stars" style="top:30%; left:26%; animation-delay:0.3s;"></div>
+<div class="stars" style="top:35%; left:37%; animation-delay:0.6s;"></div>
+<div class="stars" style="top:40%; left:48%; animation-delay:0.8999999999999999s;"></div>
+<div class="stars" style="top:45%; left:59%; animation-delay:1.2s;"></div>
+<div class="stars" style="top:50%; left:70%; animation-delay:0.0s;"></div>
+<div class="stars" style="top:55%; left:81%; animation-delay:0.3s;"></div>
+<div class="stars" style="top:60%; left:92%; animation-delay:0.6s;"></div>
+<div class="stars" style="top:65%; left:3%; animation-delay:0.8999999999999999s;"></div>
+<div class="stars" style="top:70%; left:14%; animation-delay:1.2s;"></div>
+<div class="stars" style="top:75%; left:25%; animation-delay:0.0s;"></div>
+<div class="stars" style="top:80%; left:36%; animation-delay:0.3s;"></div>
+<div class="stars" style="top:85%; left:47%; animation-delay:0.6s;"></div>
+<div class="stars" style="top:90%; left:58%; animation-delay:0.8999999999999999s;"></div>
+<div class="stars" style="top:95%; left:69%; animation-delay:1.2s;"></div>
+<div class="stars" style="top:0%; left:80%; animation-delay:0.0s;"></div>
+<div class="stars" style="top:5%; left:91%; animation-delay:0.3s;"></div>
+<div class="stars" style="top:10%; left:2%; animation-delay:0.6s;"></div>
+<div class="stars" style="top:15%; left:13%; animation-delay:0.8999999999999999s;"></div>
+<div class="stars" style="top:20%; left:24%; animation-delay:1.2s;"></div>
+<div class="stars" style="top:25%; left:35%; animation-delay:0.0s;"></div>
+<div class="stars" style="top:30%; left:46%; animation-delay:0.3s;"></div>
+<div class="stars" style="top:35%; left:57%; animation-delay:0.6s;"></div>
+<div class="stars" style="top:40%; left:68%; animation-delay:0.8999999999999999s;"></div>
+<div class="stars" style="top:45%; left:79%; animation-delay:1.2s;"></div>
+<div class="stars" style="top:50%; left:90%; animation-delay:0.0s;"></div>
+<div class="stars" style="top:55%; left:1%; animation-delay:0.3s;"></div>
+<div class="stars" style="top:60%; left:12%; animation-delay:0.6s;"></div>
+<div class="stars" style="top:65%; left:23%; animation-delay:0.8999999999999999s;"></div>
+<div class="stars" style="top:70%; left:34%; animation-delay:1.2s;"></div>
+<div class="stars" style="top:75%; left:45%; animation-delay:0.0s;"></div>
+<div class="stars" style="top:80%; left:56%; animation-delay:0.3s;"></div>
+<div class="stars" style="top:85%; left:67%; animation-delay:0.6s;"></div>
+<div class="stars" style="top:90%; left:78%; animation-delay:0.8999999999999999s;"></div>
+<div class="stars" style="top:95%; left:89%; animation-delay:1.2s;"></div>
 
-  <div class="gallery">
-    <img src="images/foto1.jpeg" alt="Hatıra 1">
-    <img src="images/foto2.jpeg" alt="Hatıra 2">
-    <img src="images/foto3.jpeg" alt="Hatıra 3">
-    <img src="images/foto4.jpeg" alt="Hatıra 4">
-    <img src="images/foto5.jpeg" alt="Hatıra 5">
-    <img src="images/foto6.png" alt="Hatıra 6">
-    <img src="images/foto7.jpeg" alt="Hatıra 7">
-    <img src="images/foto8.jpeg" alt="Hatıra 8">
-    <img src="images/foto9.jpeg" alt="Hatıra 9">
-  </div>
+    <h1>İyi ki Doğdun Hatunum 💜</h1>
+    <div id="countdown">Geri Sayım Başlıyor...</div>
 
-  <div class="letter">
-    <h2>Hatunum 💌</h2>
-    <p>Seninle geçirdiğim her an, bana hayatın ne kadar güzel olduğunu hatırlatıyor. Doğum günün kutlu olsun! Seni çok seviyorum 💖</p>
-  </div>
+    <div id="celebration">
+        <canvas id="fireworks"></canvas>
+        <canvas id="confetti"></canvas>
+    </div>
 
-  <div class="hearts"></div>
+    <div id="balloons"></div>
 
-  <script src="js/script.js"></script>
+    <div id="cake-container" style="display:none;">
+        <img id="cake" src="cake.png" alt="Pasta">
+        <div><button onclick="blowCandles()">Mumları Üfle 🎂</button></div>
+    </div>
+
+<script>
+// Geri sayım
+const countdownElement = document.getElementById("countdown");
+const celebration = document.getElementById("celebration");
+const balloons = document.getElementById("balloons");
+const cakeContainer = document.getElementById("cake-container");
+
+const targetDate = new Date("2025-06-10T00:00:00");
+
+function updateCountdown() {
+    const now = new Date();
+    const diff = targetDate - now;
+
+    if (diff <= 0) {
+        countdownElement.style.display = "none";
+        celebration.style.display = "block";
+        cakeContainer.style.display = "block";
+        startCelebration();
+    } else {
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+        const minutes = Math.floor((diff / (1000 * 60)) % 60);
+        const seconds = Math.floor((diff / 1000) % 60);
+        countdownElement.innerHTML = `${days}g ${hours}s ${minutes}d ${seconds}sn`;
+    }
+}
+
+setInterval(updateCountdown, 1000);
+
+// Kutlama başlat
+function startCelebration() {
+    for (let i = 0; i < 20; i++) {
+        let balloon = document.createElement("div");
+        balloon.className = "balloon";
+        balloon.style.left = Math.random() * 100 + "vw";
+        balloon.style.background = `hsl(${Math.random() * 360}, 70%, 60%)`;
+        balloons.appendChild(balloon);
+    }
+    fireConfetti();
+    fireFireworks();
+}
+
+// Mumları söndür
+function blowCandles() {
+    document.getElementById("cake").src = "cake_out.png";
+}
+
+function fireFireworks() {
+    let canvas = document.getElementById("fireworks");
+    let ctx = canvas.getContext("2d");
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    for (let i = 0; i < 100; i++) {
+        setTimeout(() => {
+            let x = Math.random() * canvas.width;
+            let y = Math.random() * canvas.height / 2;
+            for (let j = 0; j < 100; j++) {
+                ctx.fillStyle = `hsl(${Math.random() * 360}, 100%, 70%)`;
+                ctx.beginPath();
+                ctx.arc(x, y, Math.random() * 3, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }, i * 100);
+    }
+}
+
+function fireConfetti() {
+    let canvas = document.getElementById("confetti");
+    let ctx = canvas.getContext("2d");
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    for (let i = 0; i < 300; i++) {
+        let x = Math.random() * canvas.width;
+        let y = Math.random() * canvas.height;
+        let size = Math.random() * 10 + 5;
+        ctx.fillStyle = `hsl(${Math.random() * 360}, 100%, 60%)`;
+        ctx.fillRect(x, y, size, size);
+    }
+}
+</script>
+
+<div class="gallery">
+    <h2>Beraber Geçirdiğimiz Anlar 💖</h2>
+    <div class="photos">
+
+    <div class="photo-frame">
+        <img src="foto1.jpeg" alt="Anı 1">
+        <p class="note">Buraya notunu yaz...</p>
+    </div>
+    
+
+    <div class="photo-frame">
+        <img src="foto2.jpeg" alt="Anı 2">
+        <p class="note">Buraya notunu yaz...</p>
+    </div>
+    
+
+    <div class="photo-frame">
+        <img src="foto3.jpeg" alt="Anı 3">
+        <p class="note">Buraya notunu yaz...</p>
+    </div>
+    
+
+    <div class="photo-frame">
+        <img src="foto4.jpeg" alt="Anı 4">
+        <p class="note">Buraya notunu yaz...</p>
+    </div>
+    
+
+    <div class="photo-frame">
+        <img src="foto5.jpeg" alt="Anı 5">
+        <p class="note">Buraya notunu yaz...</p>
+    </div>
+    
+
+    <div class="photo-frame">
+        <img src="foto6.jpeg" alt="Anı 6">
+        <p class="note">Buraya notunu yaz...</p>
+    </div>
+    
+
+    <div class="photo-frame">
+        <img src="foto7.jpeg" alt="Anı 7">
+        <p class="note">Buraya notunu yaz...</p>
+    </div>
+    
+
+    <div class="photo-frame">
+        <img src="foto8.jpeg" alt="Anı 8">
+        <p class="note">Buraya notunu yaz...</p>
+    </div>
+    
+
+    <div class="photo-frame">
+        <img src="foto9.jpeg" alt="Anı 9">
+        <p class="note">Buraya notunu yaz...</p>
+    </div>
+    
+
+    <div class="photo-frame">
+        <img src="foto10.jpeg" alt="Anı 10">
+        <p class="note">Buraya notunu yaz...</p>
+    </div>
+    
+    </div>
+</div>
+
+
+<audio id="backgroundMusic" loop autoplay>
+  <source src="selin-son-arzum.mp3" type="audio/mpeg">
+  Tarayıcınız ses etiketini desteklemiyor.
+</audio>
+
+<div id="musicControls">
+  <button onclick="toggleMusic()">⏯️</button>
+  <button onclick="toggleMute()">🔊</button>
+</div>
+
+<script>
+let music = document.getElementById("backgroundMusic");
+
+function toggleMusic() {
+  if (music.paused) {
+    music.play();
+  } else {
+    music.pause();
+  }
+}
+
+function toggleMute() {
+  music.muted = !music.muted;
+}
+</script>
+
 </body>
 </html>
