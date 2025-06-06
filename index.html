@@ -148,8 +148,45 @@ body {
 }
 
 </style>
+<link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
 </head>
 <body>
+
+<!-- Dilek Tut ve Mumları Üfle -->
+<div id="dilek-container" style="display:none; text-align:center; margin-top:20px;">
+  <button onclick="showMumButon()" style="padding:10px 20px; font-size:18px; background:#ffccff; border:none; border-radius:8px;">🎈 Dilek Tut</button>
+</div>
+
+<div id="mum-container" style="display:none; text-align:center; margin-top:10px;">
+  <button onclick="ufle()" style="padding:10px 20px; font-size:18px; background:#ccffff; border:none; border-radius:8px;">💨 Mumları Üfle</button>
+</div>
+
+<!-- Maskot -->
+<img src="https://i.imgur.com/ZjqIOfv.gif" alt="maskot" id="maskot" title="Tıkla ve sevgimi duy 💖"
+     style="width:100px; position:fixed; bottom:20px; left:20px; z-index:1000; cursor:pointer;"
+     onclick="alert('Bu minik ayıcık senin kadar tatlı birini hiç görmedi 💘')">
+
+
+<div style="background-color: #fff0f5; padding: 20px; border-radius: 15px; box-shadow: 0 0 10px rgba(0,0,0,0.1); margin: 30px auto; max-width: 600px; font-family: 'Georgia', serif;">
+  <h2 style="text-align:center; color:#c71585;">💌 Sana Bir Mektubum Var...</h2>
+  <p style="font-size: 17px; line-height: 1.6; color: #444;">
+    Hatunum,
+    <br><br>
+    Bugün senin doğum günün… Belki de seni ne kadar çok sevdiğimi anlatabileceğim nadir anlardan biri.  
+    Gülüşünle hayatıma güneş gibi doğduğun o günden beri, her anım daha renkli, daha anlamlı.
+    <br><br>
+    Seninle geçirdiğim her saniye bir ömre bedel. Küçük bir tebessümün, bana bütün dünyanın huzurunu veriyor.  
+    Bu siteyi senin için hazırladım çünkü sen, özel ve güzel şeyleri her zaman en çok hak eden insansın.
+    <br><br>
+    İyi ki doğdun sevgilim…  
+    İyi ki varsın ve iyi ki benimlesin.  
+    Seni çok ama çok seviyorum. 💖
+    <br><br>
+    Her zaman senin,  
+    <b>[İsmini buraya ekleyebilirim]</b>
+  </p>
+</div>
+
 <div class="stars" style="top:0%; left:0%; animation-delay:0.0s;"></div>
 <div class="stars" style="top:5%; left:11%; animation-delay:0.3s;"></div>
 <div class="stars" style="top:10%; left:22%; animation-delay:0.6s;"></div>
@@ -437,6 +474,45 @@ function toggleMusic() {
 
 function toggleMute() {
   music.muted = !music.muted;
+}
+</script>
+
+
+<div style="background-color: #fff0f5; padding: 20px; border-radius: 15px; box-shadow: 0 0 10px rgba(0,0,0,0.1); margin: 30px auto; max-width: 600px; font-family: 'Georgia', serif;">
+  <h2 style="text-align:center; color:#c71585;">💌 Sana Bir Mektubum Var...</h2>
+  <p style="font-size: 17px; line-height: 1.6; color: #444;">
+    Hatunum,
+    <br><br>
+    Bugün senin doğum günün… Belki de seni ne kadar çok sevdiğimi anlatabileceğim nadir anlardan biri.  
+    Gülüşünle hayatıma güneş gibi doğduğun o günden beri, her anım daha renkli, daha anlamlı.
+    <br><br>
+    Seninle geçirdiğim her saniye bir ömre bedel. Küçük bir tebessümün, bana bütün dünyanın huzurunu veriyor.  
+    Bu siteyi senin için hazırladım çünkü sen, özel ve güzel şeyleri her zaman en çok hak eden insansın.
+    <br><br>
+    İyi ki doğdun sevgilim…  
+    İyi ki varsın ve iyi ki benimlesin.  
+    Seni çok ama çok seviyorum. 💖
+    <br><br>
+    Her zaman senin,  
+    <b>[İsmini buraya ekleyebilirim]</b>
+  </p>
+</div>
+
+
+<script>
+function pastaCikti() {
+    document.getElementById("dilek-container").style.display = "block";
+}
+
+function showMumButon() {
+    document.getElementById("mum-container").style.display = "block";
+    alert("Dilediğin her şey gerçek olsun Hatunum 💫");
+}
+
+function ufle() {
+    alert("Mumlar üflendi 🎂");
+    // Konfeti veya diğer efektleri tetikle
+    startConfetti();
 }
 </script>
 
